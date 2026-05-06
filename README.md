@@ -1,144 +1,144 @@
-
 # 👤 Face Recognition
-### (OpenCV ve Python ile Yüz Tanıma Uygulaması)
+### (Face Recognition Application with OpenCV and Python)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](#)
 [![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)](#)
-[![TensorFlow](https://img.shields.io/badge/dlib-008000?style=flat&logo=addthis&logoColor=white)](#)
+[![dlib](https://img.shields.io/badge/dlib-008000?style=flat&logo=addthis&logoColor=white)](#)
 
-Bu proje, Python ve OpenCV kullanarak görüntü ve gerçek zamanlı video akışlarında insan yüzlerini tespit edip tanımayı amaçlayan bir bilgisayarlı görü uygulamasıdır.
+This project is a computer vision application that aims to detect and recognize human faces in images and real‑time video streams using Python and OpenCV.
 
-## 📚 İçindekiler
-- [Proje Hakkında](#proje-hakkında)
-- [Özellikler](#özellikler)
-- [Teknoloji Yığını](#teknoloji-yığını)
-- [Kurulum ve Kullanım](#kurulum-ve-kullanım)
-- [Proje Yapısı](#proje-yapısı)
-- [Katkıda Bulunma](#katkıda-bulunma)
-- [İletişim](#iletisim)
-- [Lisans](#lisans)
-
----
-
-## Proje Hakkında
-Ankara Üniversitesi Bilgisayar Mühendisliği'nden mezun olduktan sonra kendimi geliştirme sürecimin bir parçası olan bu proje; yüz tespiti ve tanıma üzerine pratik bir bilgisayarlı görü uygulamasıdır. Haar Cascade sınıflandırıcıları ve LBPH (Local Binary Patterns Histogram) gibi yöntemleri kullanarak yüzleri algılar, eğitir ve tanır.
-
-* **Geliştirici:** Haluk Can SARIÖZ
-* **Tür:** Bilgisayarlı Görü / Yapay Zeka Uygulaması
-* **Amaç:** OpenCV ve yüz tanıma tekniklerini uygulamalı olarak öğrenmek
+## 📚 Table of Contents
+- [About the Project](#about-the-project)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation & Usage](#installation--usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Contact](#contact)
+- [License](#license)
 
 ---
 
-## Özellikler
-* **Yüz Tespiti:** Görüntü veya video karesi içindeki insan yüzlerini doğru şekilde konumlandırır.
-* **Yüz Tanıma:** Bilinen yüz kodlamalarına dayanarak bireyleri tanımlar ve doğrular.
-* **Gerçek Zamanlı İşleme:** Canlı web kamerası akışında çalışabilir.
-* **Eğitici Modülü:** `trainer` klasörü ile sisteme yeni yüzler öğretme imkanı.
-* **Sınırlayıcı Kutular:** Tanınan yüzlerin etrafına dikdörtgen ve isim etiketleri çizer.
+## About the Project
+As part of my continuous self‑improvement journey after graduating from Ankara University Computer Engineering, this project is a practical computer vision application focused on face detection and recognition. It detects, trains on, and recognizes faces using methods such as Haar Cascade classifiers and LBPH (Local Binary Patterns Histogram).
+
+- **Developer:** Haluk Can SARIÖZ
+- **Type:** Computer Vision / Artificial Intelligence Application
+- **Purpose:** Hands‑on learning of OpenCV and face recognition techniques
 
 ---
 
-## Teknoloji Yığını
-| Katman | Teknoloji |
-|--------|-----------|
-| **Dil** | Python |
-| **Bilgisayarlı Görü** | OpenCV (`cv2`) |
-| **Makine Öğrenmesi** | `face_recognition` kütüphanesi (dlib tabanlı), NumPy |
-| **Sınıflandırıcı** | Haar Cascade, LBPH |
-| **Versiyon Kontrol** | Git & GitHub |
+## Features
+- **Face Detection** – Accurately locates human faces within an image or video frame.
+- **Face Recognition** – Identifies and verifies individuals based on known face encodings.
+- **Real‑Time Processing** – Can operate on a live webcam stream.
+- **Training Module** – The `trainer` folder provides the ability to teach new faces to the system.
+- **Bounding Boxes** – Draws rectangles and name labels around recognized faces.
 
 ---
 
-## Kurulum ve Kullanım
+## Tech Stack
 
-### Ön Gereksinimler
-* [Python 3.x](https://www.python.org/downloads/)
-* Git
-* C++ derleyicisi (bazı işletim sistemlerinde `dlib`'in doğru şekilde derlenmesi için gerekebilir)
+| Layer | Technology |
+|:-------|:-----------|
+| **Language** | Python |
+| **Computer Vision** | OpenCV (`cv2`) |
+| **Machine Learning** | `face_recognition` library (dlib‑based), NumPy |
+| **Classifier** | Haar Cascade, LBPH |
+| **Version Control** | Git & GitHub |
 
-### Kurulum Adımları
+---
 
-**1. Depoyu klonlayın:**
+## Installation & Usage
+
+### Prerequisites
+- [Python 3.x](https://www.python.org/downloads/)
+- Git
+- C++ compiler (may be required on some operating systems for `dlib` to compile correctly)
+
+### Installation Steps
+
+**1. Clone the repository:**
 ```bash
 git clone https://github.com/halukcansarioz/Face-Recognition.git
 ```
 
-**2. Proje dizinine gidin:**
+**2. Navigate to the project directory:**
 ```bash
 cd Face-Recognition
 ```
 
-**3. Sanal ortam oluşturun (önerilir):**
+**3. Create a virtual environment (recommended):**
 ```bash
 python -m venv venv
 source venv/bin/activate   # Linux / macOS
 venv\Scripts\activate      # Windows
 ```
 
-**4. Gerekli kütüphaneleri yükleyin:**
+**4. Install the required libraries:**
 ```bash
 pip install opencv-python face-recognition numpy
 ```
 
-**5. Uygulamayı çalıştırın:**
+**5. Run the application:**
 
-Yüz tanıma taraması için:
+For face recognition scanning:
 ```bash
 python Tarama.py
 ```
 
-Yeni yüz görüntüsü almak için:
+To capture a new face image:
 ```bash
 python Resim_Alma.py
 ```
 
-Eğitim değerlendirmesi için:
+For training evaluation:
 ```bash
 python degerlendirme.py
 ```
 
 ---
 
-## Proje Yapısı
+## Project Structure
 ```text
 Face-Recognition/
-├── .idea/                 # IDE yapılandırma dosyaları
-├── Cascade/               # Haar Cascade XML dosyaları
-├── trainer/               # Eğitilmiş model dosyaları
-├── venv/                  # Sanal ortam (opsiyonel)
-├── Resim_Alma.py          # Yeni yüz görüntüsü yakalama betiği
-├── Tarama.py              # Yüz tanıma tarama betiği
-├── degerlendirme.py       # Model değerlendirme betiği
-├── .gitattributes         # Git yapılandırma dosyası
-└── README.md              # Proje dökümantasyonu
+├── .idea/                 # IDE configuration files
+├── Cascade/               # Haar Cascade XML files
+├── trainer/               # Trained model files
+├── venv/                  # Virtual environment (optional)
+├── Resim_Alma.py          # New face image capture script
+├── Tarama.py              # Face recognition scanning script
+├── degerlendirme.py       # Model evaluation script
+├── .gitattributes         # Git configuration file
+└── README.md              # Project documentation
 ```
 
 ---
 
-## Katkıda Bulunma
-Katkılarınız, hata bildirimleriniz ve özellik istekleriniz memnuniyetle karşılanır!
+## Contributing
+Contributions, bug reports, and feature requests are welcome!
 
-1. Bu depoyu **Fork**'layın.
-2. Bir **Branch** oluşturun (`git checkout -b feature/YeniOzellik`).
-3. Değişikliklerinizi **Commit** edin (`git commit -m 'Ekleme: Yeni özellik'`).
-4. Kodlarınızı **Push**'layın (`git push origin feature/YeniOzellik`).
-5. Bir **Pull Request** açın.
+1. **Fork** this repository.
+2. Create a **Branch** (`git checkout -b feature/NewFeature`).
+3. Make your changes and **Commit** (`git commit -m 'Add: New feature'`).
+4. **Push** your code (`git push origin feature/NewFeature`).
+5. Open a **Pull Request**.
 
 ---
 
-<a name="iletisim"></a>
-## İletişim
+<a name="contact"></a>
+## Contact
 **Haluk Can Sarıöz**
 - GitHub: [@halukcansarioz](https://github.com/halukcansarioz)
-- E-posta: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
+- Email: [halukcansarioz19@gmail.com](mailto:halukcansarioz19@gmail.com)
 - LinkedIn: [Haluk Can Sarıöz](https://www.linkedin.com/in/halukcansarioz)
 
 ---
 
-*Bu bilgisayarlı görü projesini faydalı bulduysanız ⭐ vermeyi unutmayın!*
+*If you found this computer vision project helpful, don't forget to ⭐ it!*
 
 ---
 
-## Lisans
-Bu proje [MIT Lisansı](LICENSE) ile lisanslanmıştır.
+## License
+This project is licensed under the [MIT License](LICENSE).
