@@ -139,6 +139,5 @@ Contributions, bug reports, and feature requests are welcome!
 *If you found this computer vision project helpful, don't forget to ⭐ it!*
 
 ---
-
 ## License
 This project is licensed under the [MIT License](LICENSE).
