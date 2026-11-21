@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)](#)
 [![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat&logo=opencv&logoColor=white)](#)
-[![dlib](https://img.shields.io/badge/dlib-008000?style=flat&logo=addthis&logoColor=white)](#)
+
 
 This project is a computer vision application that aims to detect and recognize human faces in images and real‑time video streams using Python and OpenCV.
 
@@ -44,7 +44,7 @@ As part of my continuous self‑improvement journey after graduating from Ankara
 |:-------|:-----------|
 | **Language** | Python |
 | **Computer Vision** | OpenCV (`cv2`) |
-| **Machine Learning** | `face_recognition` library (dlib‑based), NumPy |
+| **Machine Learning** | OpenCV LBPHFaceRecognizer, NumPy, Pillow |
 | **Classifier** | Haar Cascade, LBPH |
 | **Version Control** | Git & GitHub |
 
@@ -55,7 +55,7 @@ As part of my continuous self‑improvement journey after graduating from Ankara
 ### Prerequisites
 - [Python 3.x](https://www.python.org/downloads/)
 - Git
-- C++ compiler (may be required on some operating systems for `dlib` to compile correctly)
+
 
 ### Installation Steps
 
@@ -78,7 +78,7 @@ venv\Scripts\activate      # Windows
 
 **4. Install the required libraries:**
 ```bash
-pip install opencv-python face-recognition numpy
+pip install -r requirements.txt # (opencv-contrib-python, numpy, Pillow)
 ```
 
 **5. Run the application:**
