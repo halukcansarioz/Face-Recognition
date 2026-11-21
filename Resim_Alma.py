@@ -1,10 +1,12 @@
 import cv2
+import os
 
 Sayaç = 0
 Kamera = cv2.VideoCapture(0)
 Yuz_Tanıma = cv2.CascadeClassifier("Cascade/haarcascade_frontalface_default.xml")
 Yuz_Kimlik = input('\nNumaranızı giriniz: ')
 print("\n Yüz yakalama başlayacak. Kameraya bak:")
+os.makedirs('Veri', exist_ok=True)
 
 while True:
     ret, Resim = Kamera.read()
